@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'ckeditor',
+    
     #apps
     'applications.core',
     'applications.services.apps.ServicesConfig', #permite extender la configuracion del apps.py
     'applications.blog',
     'applications.social.apps.SocialConfig',
     'applications.pages.apps.PagesConfig',
+    'applications.contact',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +124,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 STATIC_URL = 'static/'
 
 # media files
