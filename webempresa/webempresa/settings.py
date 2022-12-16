@@ -40,6 +40,10 @@ INSTALLED_APPS = [
 
     #apps
     'applications.core',
+    'applications.services.apps.ServicesConfig', #permite extender la configuracion del apps.py
+    'applications.blog',
+    'applications.social.apps.SocialConfig',
+    'applications.pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'applications.social.processors.ctx_dict',
             ],
         },
     },
@@ -119,6 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
